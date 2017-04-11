@@ -6,7 +6,7 @@
  Airport.prototype.planes = function() { return this._hangar; };
 
  Airport.prototype.takeoff = function(plane) {
-   return plane;
+   this._hangar.pop(plane);
  };
   Airport.prototype.land = function(plane) {
     this._hangar.push(plane)

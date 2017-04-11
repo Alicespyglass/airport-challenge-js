@@ -17,7 +17,9 @@ describe('Airport', function() {
 
   describe('takeoff', function() {
     it('instructs planes to take off', function() {
-      expect(airport.takeoff(plane)).toEqual(plane)
+      airport.land(plane);
+      airport.takeoff(plane);
+      expect(airport.planes()).toEqual([])
     });
   });
 
