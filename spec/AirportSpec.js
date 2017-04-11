@@ -10,6 +10,11 @@ describe('Airport', function() {
     plane = jasmine.createSpy('plane');
   });
 
+  it('shows planes in hangar', function() {
+    airport.land(plane);
+    expect(airport.planes()).toEqual([plane])
+  });
+
   describe('takeoff', function() {
     it('instructs planes to take off', function() {
       expect(airport.takeoff(plane)).toEqual(plane)
@@ -18,10 +23,9 @@ describe('Airport', function() {
 
    describe('land', function() {
      it('instructs planes to land', function() {
-    airport.land(plane);
+       airport.land(plane);
      expect(airport._hangar).toContain(plane)
-    });
    });
+  });
 
-
-});
+})

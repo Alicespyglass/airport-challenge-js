@@ -3,6 +3,8 @@
    this._hangar = [];
  };
 
+ Airport.prototype.planes = function() { return this._hangar; };
+
  Airport.prototype.takeoff = function(plane) {
    return plane;
  };
